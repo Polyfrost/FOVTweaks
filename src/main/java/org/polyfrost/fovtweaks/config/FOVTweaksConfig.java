@@ -23,7 +23,7 @@ public class FOVTweaksConfig extends Config {
             description = "Allow for modifying FOV change states.",
             category = "Miscellaneous", subcategory = "Field of View"
     )
-    public static boolean useFovModifiers;
+    public boolean useFovModifiers;
 
     @Slider(
             title = "Sprinting FOV",
@@ -31,7 +31,7 @@ public class FOVTweaksConfig extends Config {
             category = "Miscellaneous", subcategory = "Field of View",
             min = -5F, max = 5F
     )
-    public static float sprintingModifier = 1;
+    public float sprintingModifier = 1;
 
     @Slider(
             title = "Flying FOV",
@@ -39,7 +39,7 @@ public class FOVTweaksConfig extends Config {
             category = "Miscellaneous", subcategory = "Field of View",
             min = -5F, max = 5F
     )
-    public static float flyingModifier = 1;
+    public float flyingModifier = 1;
 
     @Slider(
             title = "Bow FOV",
@@ -47,7 +47,7 @@ public class FOVTweaksConfig extends Config {
             category = "Miscellaneous", subcategory = "Field of View",
             min = -5, max = 5
     )
-    public static float bowModifier = 1;
+    public float bowModifier = 1;
 
     @Slider(
             title = "Speed FOV",
@@ -55,7 +55,7 @@ public class FOVTweaksConfig extends Config {
             category = "Miscellaneous", subcategory = "Field of View",
             min = -5, max = 5
     )
-    public static float speedModifier = 1;
+    public float speedModifier = 1;
 
     @Slider(
             title = "Slowness FOV",
@@ -63,5 +63,5 @@ public class FOVTweaksConfig extends Config {
             category = "Miscellaneous", subcategory = "Field of View",
             min = -5, max = 5
     )
-    public static float slownessModifier = 1;
+    public float slownessModifier = 1;
 }
