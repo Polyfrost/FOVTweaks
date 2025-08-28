@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.At;
 public class MixinAbstractClientPlayer {
     @ModifyReturnValue(method = "getFovModifier", at = @At("RETURN"))
     private float idk(float original) {
-        return FOVTweaks.config.useFovModifiers ? FOVHook.getFovModifier() : original;
+        return FOVTweaks.config.useFovModifiers || FOVTweaks.config.removeWaterFov ? FOVHook.getFov() : original;
     }
 }
