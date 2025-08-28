@@ -4,6 +4,7 @@ package org.polyfrost.fovtweaks
 //$$ import net.fabricmc.api.ModInitializer;
 //#elseif FORGE
 import net.minecraftforge.fml.common.Mod
+import net.minecraftforge.fml.common.event.FMLInitializationEvent
 //#endif
 import org.polyfrost.fovtweaks.config.FOVTweaksConfig
 
@@ -17,8 +18,19 @@ class FOVTweaks
 {
 
     //#if FABRIC
-    //$$     override fun onInitialize() {}
+    //$$ override
+    //#elseif FORGE
+    @Mod.EventHandler
     //#endif
+    fun onInitialize(
+        //#if FORGE
+        event: FMLInitializationEvent
+        //#endif
+    ) {
+        // Forge requires the config to be initialized during boot, fabric doesn't
+        // since im alr doing this, a lateinit var might be better..?
+        config
+    }
 
     companion object {
         const val ID = "@MOD_ID@"
@@ -26,6 +38,6 @@ class FOVTweaks
         const val VERSION = "@MOD_VERSION@"
 
         @JvmStatic
-        val config: FOVTweaksConfig by lazy { FOVTweaksConfig }
+        val config: FOVTweaksConfig by lazy { FOVTweaksConfig() }
     }
 }

@@ -5,7 +5,7 @@ import org.polyfrost.oneconfig.api.config.v1.Config
 import org.polyfrost.oneconfig.api.config.v1.annotations.Slider
 import org.polyfrost.oneconfig.api.config.v1.annotations.Switch
 
-object FOVTweaksConfig : Config("${FOVTweaks.ID}.json", FOVTweaks.NAME, Category.QOL) {
+class FOVTweaksConfig : Config("${FOVTweaks.ID}.json", FOVTweaks.NAME, Category.QOL) {
     init {
         listOf(
             "sprintingModifier", "flyingModifier",
