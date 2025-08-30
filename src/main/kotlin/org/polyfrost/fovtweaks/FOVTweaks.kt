@@ -29,7 +29,7 @@ class FOVTweaks
     ) {
         // Forge requires the config to be initialized during boot, fabric doesn't
         // since im alr doing this, a lateinit var might be better..?
-        config
+        //config
     }
 
     companion object {
