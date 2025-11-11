@@ -12,6 +12,8 @@ class FOVTweaksConfig : Config("${FOVTweaks.ID}.json", FOVTweaks.NAME, Category.
             "bowModifier", "speedModifier",
             "slownessModifier"
         ).forEach { addDependency(it, "useFovModifiers") }
+
+        loadFrom("patcher.toml")
     }
 
     @Switch(
