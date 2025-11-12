@@ -29,7 +29,7 @@ class FOVTweaks
     ) {
         // Forge requires the config to be initialized during boot, fabric doesn't
         // since im alr doing this, a lateinit var might be better..?
-        //config
+        config = FOVTweaksConfig()
     }
 
     companion object {
@@ -38,6 +38,6 @@ class FOVTweaks
         const val VERSION = "@MOD_VERSION@"
 
         @JvmStatic
-        val config: FOVTweaksConfig by lazy { FOVTweaksConfig() }
+        lateinit var config: FOVTweaksConfig
     }
 }

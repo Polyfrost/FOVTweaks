@@ -1,6 +1,6 @@
 package org.polyfrost.fovtweaks.hooks
 
-import dev.deftu.omnicore.client.OmniClientPlayer.getInstance
+import dev.deftu.omnicore.api.client.player
 import net.minecraft.client.entity.EntityPlayerSP
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.init.Items
@@ -14,7 +14,7 @@ object FOVHook {
     @JvmStatic
     fun getFov(): Float {
         var base = 1.0f
-        val player: EntityPlayerSP = getInstance() ?: return base
+        val player: EntityPlayerSP = player ?: return base
 
         if (FOVTweaks.config.useFovModifiers) {
             base *= getFovModifier(player)
